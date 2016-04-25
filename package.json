@@ -1,0 +1,45 @@
+{
+  "name": "oa_mobi_bridge",
+  "version": "0.0.1",
+  "description": "Tecsun OA bridge web application",
+  "scripts": {
+    "start": "gulp",
+    "less": "gulp less",
+    "typings": "typings",
+    "postinstall": "typings install"
+  },
+  "devDependencies": {
+    "browser-sync": "latest",
+    "connect-history-api-fallback": "latest",
+    "connect-logger": "latest",
+    "graceful-fs": "latest",
+    "gulp": "latest",
+    "gulp-clean": "latest",
+    "gulp-clean-css": "latest",
+    "gulp-concat": "latest",
+    "gulp-connect": "latest",
+    "gulp-htmlmin": "latest",
+    "gulp-imagemin": "latest",
+    "gulp-less": "latest",
+    "gulp-livereload": "latest",
+    "gulp-rename": "latest",
+    "gulp-typescript": "latest",
+    "gulp-uglify": "latest",
+    "gulp-watch": "latest",
+    "lodash": "latest",
+    "require-dir": "latest",
+    "typescript": "^1.8.9",
+    "typings": "^0.7.12"
+  },
+  "dependencies": {
+    "angular2": "2.0.0-beta.14",
+    "bootstrap": "latest",
+    "es6-shim": "^0.35.0",
+    "font-awesome": "latest",
+    "jquery": "1.x.x",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.2",
+    "systemjs": "0.19.25",
+    "zone.js": "0.6.6"
+  }
+}

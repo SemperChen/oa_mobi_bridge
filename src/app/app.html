@@ -1,0 +1,44 @@
+<section>
+
+    <!-- Begin: sidebar -->
+    <mobi-oa-sidebar [currentUser]="currentUser"></mobi-oa-sidebar>
+    <!-- End: sidebar -->
+
+
+    <!-- Begin: login -->
+    <mobi-oa-login *ngIf="!isLogin" (onLoginSuccess)="loginSuccess($event)"></mobi-oa-login>
+    <!-- End: login -->
+
+    <!-- Begin: content -->
+    <div class="main-content" [class.hide]="!isLogin">
+
+        <!-- Begin: header -->
+        <div class="header-section">
+
+            <!-- Begin: toggle button -->
+            <a class="toggle-btn"><i class="fa fa-bars"></i></a>
+            <!-- End: toggle button -->
+
+            <!-- Begin: notification menu -->
+            <div class="menu-right">
+                <ul class="notification-menu">
+                    <li>
+                        <a href="/" class="btn btn-default info-number">
+                            <i class="fa fa-bell-o"></i>
+                            <span *ngIf="unreadMessageCount > 0" class="badge">{{unreadMessageCount}}</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- End: notification menu -->
+
+
+        </div>
+        <!-- End: header -->
+
+        <router-outlet></router-outlet>
+
+    </div>
+    <!-- End: content -->
+
+</section>

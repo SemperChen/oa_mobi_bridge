@@ -1,0 +1,46 @@
+<div *ngIf="workflowDetail" class="page-heading">
+    <h3>{{workflowDetail.tableName}}</h3>
+    <a class="btn btn-primary pull-right" style="margin-top: -25px;">详细</a>
+    <h4 class="panel-title">简要信息</h4>
+</div>
+
+<div *ngIf="workflowDetail && (workflowDetail.tableType === 'OA_DYNAMIC_FINMM_BORROWAPPLY')"
+     class="panel" style="margin-top: 20px;">
+    <div class="panel-body">
+        <ul class="goal-progress">
+            <li>
+                <h4 class="inv-to">借支人</h4>
+                <h2 class="corporate-id">{{workflowDetail.BORROWPERSON}}</h2>
+            </li>
+            <li>
+                <h4 class="inv-to">所属部门</h4>
+                <h2 class="corporate-id">{{workflowDetail.SYS_ORGAN_NAME}}</h2>
+            </li>
+            <li>
+                <h4 class="inv-to">申请时间</h4>
+                <h2 class="corporate-id">{{workflowDetail.NEWDATE}}</h2>
+            </li>
+            <li>
+                <h4 class="inv-to">借支类型</h4>
+                <h2 *ngIf="workflowDetail.APPLYTYPE === 'NULL'" class="corporate-id">{{workflowDetail.APPLYTYPE}}</h2>
+                <h2 *ngIf="!(workflowDetail.APPLYTYPE === 'NULL')" class="corporate-id">无</h2>
+            </li>
+            <li>
+                <h4 class="inv-to">借支金额</h4>
+                <h2 class="corporate-id" style="color: #d9534f;font-weight:900;">￥ {{workflowDetail.APPLYAMOUNT}}</h2>
+            </li>
+            <li>
+                <h4 class="inv-to">借支事由</h4>
+                <h2 *ngIf="workflowDetail.OTHERBORROWREA === 'NULL'" class="corporate-id">
+                    {{workflowDetail.APPLYTYPE}}</h2>
+                <h2 *ngIf="!(workflowDetail.OTHERBORROWREA === 'NULL')" class="corporate-id">无</h2>
+            </li>
+        </ul>
+    </div>
+    <footer class="sticky-footer">
+        <div class="row">
+            <div class="col-xs-6"><a class="btn btn-success btn-block">同意</a></div>
+            <div class="col-xs-6"><a class="btn btn-danger btn-block">不同意</a></div>
+        </div>
+    </footer>
+</div>

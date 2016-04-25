@@ -1,0 +1,59 @@
+<!-- Begin: sidebar -->
+<div class="left-side">
+
+    <!-- Begin: logo and icon -->
+    <div class="logo">
+        <a href="index.html"><img src="assets/images/logo.png" alt="">
+            <div>
+                <p>德生科技</p>
+                <p>OA协同管理平台</p>
+            </div>
+        </a>
+    </div>
+    <div class="logo-icon text-center">
+        <a href="index.html"><img src="assets/images/logo_icon.png" alt=""></a>
+    </div>
+    <!-- End: logo and icon -->
+
+    <div class="left-side-inner">
+
+        <!-- Begin: user information -->
+        <div class="visible-xs hidden-sm hidden-md hidden-lg">
+
+            <div class="media logged-user">
+                <i class="fa fa-user media-object"></i>
+                <div class="media-body" style="margin-left:0px;">
+                    <h4 *ngIf="currentUser"><a>{{currentUser.username}}</a></h4>
+                    <span *ngIf="currentUser">{{currentUser.department}}</span>
+                </div>
+                <div class="pull-right">
+                </div>
+            </div>
+        </div>
+        <!-- End: user information -->
+
+        <!-- Begin: sidebar nav -->
+        <ul class="nav nav-pills nav-stacked custom-nav">
+            <li><a (click)="navTo('/')"><i class="fa fa-tasks"></i> <span>审批</span></a></li>
+            <!--<li class="menu-list nav-active"><a href=""><i class="fa fa-laptop"></i> <span>Layouts</span></a>-->
+            <!--<ul class="sub-menu-list">-->
+            <!--<li class="active"><a href="#"> Level-1</a></li>-->
+            <!--<li><a href="#"> Level-2</a></li>-->
+            <!--</ul>-->
+            <!--</li>-->
+        </ul>
+        <!-- End: sidebar nav -->
+
+        <!-- Begin: bottom menu -->
+        <div class="visible-xs hidden-sm hidden-md hidden-lg">
+
+            <h5 class="left-nav-title">用户</h5>
+            <ul class="nav nav-pills nav-stacked custom-nav">
+                <li><a href="#"><i class="fa fa-cog"></i> <span>设定</span></a></li>
+                <li><a href="#"><i class="fa fa-sign-out"></i> <span>注销</span></a></li>
+            </ul>
+        </div>
+        <!-- End: bottom menu -->
+    </div>
+</div>
+<!-- End: sidebar -->

@@ -1,0 +1,26 @@
+export class WorkflowTopic {
+    currentAction:string;
+    currentProcess:string;
+    currentStatus:string;
+    dataRecordId:string;
+    endData:string;
+    flowId:string;
+    geshi:string;
+    itemCatagory:string;
+    itemStatus:string;
+    itemType:string;
+    name:string;
+    organId:string;
+    organName:string;
+    preNodeDealTime:string;
+    preNodeDealTimeString:string;
+    preNodeName:string;
+    processState:string;
+    startData:string;
+    startTime:string;
+    startTimeString:string;
+    startUser:string;
+    taskId:string;
+    title:string;
+    versionNo:string;
+}

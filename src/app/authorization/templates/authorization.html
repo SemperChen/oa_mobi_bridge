@@ -1,0 +1,52 @@
+<!-- Begin: login content -->
+<div class="container login-body">
+
+    <form class="form-signin">
+        <div class="form-signin-heading text-center">
+            <h1 class="sign-title">登录</h1>
+            <div>
+                <img src="assets/images/logo.png" style="height: 48px; width: 48px;margin-bottom: 20px;" alt=""/>
+                <div>
+                    <p style="font-size:18px;text-align: center;font-weight: bold; color: #5e6163;margin-bottom: 3px;">
+                        德生科技</p>
+                    <p style="font-size:18px;text-align: center;font-weight: bold; color: #5e6163;margin-bottom: 3px;">
+                        OA协同管理平台</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="login-wrap">
+            <input [(ngModel)]="currentUser.username" type="text" class="form-control" placeholder="用户名" autofocus>
+            <input [(ngModel)]="currentUser.password" type="password" class="form-control" placeholder="密码">
+
+            <a (click)="doLogin()" [class.disabled]="!currentUser.username || !currentUser.password"
+               class="btn btn-lg btn-login btn-block">
+                <i class="fa fa-check"></i>
+            </a>
+        </div>
+        <!-- Modal -->
+        <div aria-hidden="true" aria-labelledby="loginModal" role="dialog" tabindex="-1" id="loginModal"
+             class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">登录失败</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>你填写的用户名与密码不匹配.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button data-dismiss="modal" class="btn btn-default" type="button">确定</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- modal -->
+
+    </form>
+    <div style="margin-bottom: 10px;">
+        <p style="text-align: center; font-size: 12px;">广东德生科技股份有限公司</p>
+    </div>
+</div>
+<!-- End: login content -->

@@ -1,0 +1,47 @@
+import {WorkflowDetail} from "./workflow-detail";
+export class WorkflowDetailBorrowApply extends WorkflowDetail {
+
+    SYS_FORM_DATA_RECORD_ID:number;
+    SYS_BT:string;
+    SYS_MJ:string;
+    SYS_NGR_ID:number;
+    SYS_ORGAN_ID:number;
+    SYS_ORGAN_NAME:string;//部门
+    ID:number;
+    NEWNUMBER:string;
+    NEWDATE:string;//申请时间
+    PROJECTNAME:string;
+    BORROWPERSON:string;//借支人
+    ORGAN:string;
+    BUSINESSTYPE:string;
+    APPLYTYPE:string;//借支类型
+    CAPTIALAMOUNT:string;
+    APPLYAMOUNT:string;//借支申请
+    TRAVELREPORTNU:string;
+    OTHERBORROWREA:string;//借支事由
+    PLANRETURNDATE:string;
+    CONCRETEDESCRIBE:string;
+    DEPTMANAGERIS:string;
+    PROMAJOIS:string;
+    FINANCECHECKIS:string;
+    BUSIMANAGERIS:string;
+    FINACEMAJOIS:string;
+    VICEPRESIDENIS:string;
+    RATIFYIS:string;
+    APPROVALOP:string;
+    PROID:number;
+    LANDMARKID:number;
+    LANDMARKNAME:string;
+    BUSINESSTID:number;
+    FINUSERID:number;
+    FINPOWER:string;
+    PROCHARGE:string;
+    ACCOUNTANT:string;
+    LEADERAUTH:string;
+    PATH:string;
+    PATHSTATE:string;
+    STATEUSERROLE:string;
+    MEMBERORGAN:string;
+    DIRECTOR:string;
+    PROJECTID:number;
+}

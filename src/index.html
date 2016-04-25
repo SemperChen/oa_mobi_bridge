@@ -1,0 +1,64 @@
+<html>
+<head>
+    <title>德生移动办公协同系统</title>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+
+    <!-- Begin: script require -->
+    <script src="./assets/scripts/es6-shim.min.js"></script>
+    <script src="./assets/scripts/system-polyfills.js"></script>
+    <script src="./assets/scripts/shims_for_IE.js"></script>
+    <script src="./assets/scripts/angular2-polyfills.js"></script>
+    <script src="./assets/scripts/system.src.js"></script>
+    <script src="./assets/scripts/Rx.js"></script>
+    <script src="./assets/scripts/angular2.dev.js"></script>
+    <script src="./assets/scripts/router.dev.js"></script>
+    <script src="./assets/scripts/http.dev.js"></script>
+    <script src="./assets/scripts/jquery.min.js"></script>
+    <script src="./assets/scripts/bootstrap.min.js"></script>
+
+    <!-- End: script require -->
+
+    <link rel="stylesheet" href="./assets/styles/main.css"/>
+
+    <!-- Begin: Configure SystemJS -->
+    <script>
+        System.config({
+            packages: {
+                app: {
+                    format: 'register',
+                    defaultExtension: 'js'
+                }
+            }
+        });
+        System.import('app/main')
+                .then(null, console.error.bind(console));
+    </script>
+    <!-- End: Configure SystemJS -->
+
+</head>
+<body class="sticky-header">
+<mobi-oa>
+    <!-- Begin: login content -->
+    <div class="container login-body">
+        <form class="form-signin">
+            <div class="form-signin-heading text-center" style=" padding: 25px 15px 60px;">
+                <div>
+                    <img src="./assets/images/logo.png" style="height: 48px; width: 48px;margin-bottom: 20px;"
+                         alt=""/>
+                    <div>
+                        <p style="font-size:18px;text-align: center;font-weight: bold; color: #5e6163;margin-bottom: 3px;">
+                            德生科技</p>
+                        <p style="font-size:18px;text-align: center;font-weight: bold; color: #5e6163;margin-bottom: 3px;">
+                            OA协同管理平台</p>
+                    </div>
+                    <p style="font-size:18px;text-align: center;font-weight: bold; color: #a9b2b4;margin-top: 60px;">
+                        正在加载</p>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- End: login content -->
+</mobi-oa>
+</body>
+</html>

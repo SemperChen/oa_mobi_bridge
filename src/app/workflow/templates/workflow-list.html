@@ -1,0 +1,171 @@
+<div class="page-heading">
+    <h3>审批</h3>
+    <p><span class="badge badge-important">待办</span>&nbsp;
+        <span class="badge badge">所有流程</span>&nbsp;
+        <span class="badge badge-primary">所有状态</span>
+    </p>
+</div>
+
+<hr>
+<div class="wrapper">
+
+    <section class="panel">
+        <div class="panel-body">
+            <div class="summary" style="text-align: right;">
+                <p *ngIf="!pager" class="pull-left" style="padding-top: 8px;margin-bottom: 0px;">暂无记录</p>
+                <p *ngIf="pager" class="pull-left" style="padding-top: 8px;margin-bottom: 0px;"><span
+                        style="font-size: 30px;padding: 0px;margin: 0px;">{{pager.rowCount}}</span> 条记录</p>
+                <a class="btn btn-warning " (click)="showFilter()">筛选</a>
+                <div class="btn-group">
+                    <button data-toggle="dropdown" class="btn btn-success dropdown-toggle" type="button">排序 <span
+                            class="caret"></span></button>
+                    <ul role="menu" class="dropdown-menu">
+                        <li><a href="#">发起日期</a></li>
+                        <li><a href="#">流程名称</a></li>
+                        <li><a href="#">流程类型</a></li>
+                        <li><a href="#">发起部门</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <h3 class="text-center" style="margin-top: -8px;"><span class="badge badge-success">排序-发起日期</span></h3>
+
+    <div *ngIf="pager" *ngFor="#item of topic" class="panel panel-primary" (click)="navToDetail(item.taskId)">
+        <div *ngIf="item != null" class="panel-heading">
+            <h3 class="panel-title">{{item.title}}<span class="badge badge-inverse pull-right">{{item.itemType}}</span>
+            </h3>
+        </div>
+        <div *ngIf="item != null" class="panel-body">
+            <div class="row">
+                <div class="col-xs-7">
+                    <h4 class="inv-to">发起人</h4>
+                    <h2 class="corporate-id">{{item.startUser}}</h2>
+                    <h2 class="corporate-id">
+                        <h5 class="text-info">{{item.organName}}</h5>
+                    </h2>
+
+                </div>
+                <div class="col-xs-5">
+                    <h4 class="inv-to text-right">发起时间</h4>
+                    <h2 class="corporate-id text-right">
+                        <h5>{{item.startTime.split('T')[0]}}</h5>
+                    </h2>
+                    <h2 class="corporate-id text-right">
+                        <h5>{{item.startTime.split('T')[1]}}</h5>
+                    </h2>
+                </div>
+            </div>
+            <hr class="inv-hr"/>
+            <div class="row">
+                <div class="col-xs-12">
+                    <h4 class="inv-to">执行人</h4>
+                    <h2 class="corporate-id">{{item.currentProcess.split(']')[0].split('[')[1].substr(0,
+                        item.currentProcess.split(']')[0].split('[')[1].length-1)}}</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <h4 class="inv-to">执行流程</h4>
+                    <h2 class="corporate-id">{{item.currentProcess.split(']')[1].split('[')[1]}}<span
+                            class="badge pull-right">{{item.itemStatus}}</span></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="pager">
+        <ul class="pager">
+            <li class="previous" [class.disabled]="pager.currentPage===1"><a>上一页</a></li>
+            <li class="disabled"><a>{{pager.currentPage}} / {{pager.pageCount}}</a></li>
+            <li class="next" [class.disabled]="pager.currentPage===pager.pageCount"><a>下一页</a></li>
+        </ul>
+    </div>
+
+    <!-- Modal -->
+    <div aria-hidden="false" aria-labelledby="dashboardFilterModal" role="dialog" tabindex="-1"
+         id="dashboardFilterModal"
+         class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">筛选</h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <label>流程标题</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>流程名称</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>发起人</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-default dropdown-toggle"
+                                            data-toggle="dropdown">
+                                        流程类型 <span class="caret"></span></button>
+                                    <ul class="dropdown-menu">
+                                        <li><a>全部</a></li>
+                                    </ul>
+                                </div>
+                                <input type="text" class="form-control" placeholder="全部" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-default dropdown-toggle"
+                                            data-toggle="dropdown">
+                                        当前状态 <span class="caret"></span></button>
+                                    <ul class="dropdown-menu">
+                                        <li><a>全部</a></li>
+                                    </ul>
+                                </div>
+                                <input type="text" class="form-control" placeholder="全部" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-default dropdown-toggle"
+                                            data-toggle="dropdown">
+                                        开始时间 <span class="caret"></span></button>
+                                    <ul class="dropdown-menu">
+                                        <li><a>全部</a></li>
+                                    </ul>
+                                </div>
+                                <input type="text" class="form-control" placeholder="全部" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-default dropdown-toggle"
+                                            data-toggle="dropdown">
+                                        结束时间 <span class="caret"></span></button>
+                                    <ul class="dropdown-menu">
+                                        <li><a>全部</a></li>
+                                    </ul>
+                                </div>
+                                <input type="text" class="form-control" placeholder="全部" disabled>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" (click)="doFilter()">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal -->
+</div>
